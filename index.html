@@ -1,0 +1,80 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script>
+function showResult(str) {
+    if (str == "") {
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else { 
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","function/"+str,true);
+        xmlhttp.send();
+    }
+}
+function fileread() {
+
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint_insert").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET","function/fileread.php",true);
+        xmlhttp.send();
+    
+}
+function filewrite() {
+
+        if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint_insert").innerHTML = xmlhttp.responseText;
+            }
+        };
+		var str=document.getElementById("txt_str").value;
+        xmlhttp.open("GET","function/filewrite.php?str="+str,true);
+        xmlhttp.send();
+		alert("修改完成");
+    
+}
+</script>
+</head>
+<body>
+
+<form>
+<select name="result" onchange="showResult(this.value)">
+  <option value="">Select</option>
+  <option value="file.html">檔案處理</option>
+  <option value="split.php">字串處理</option>
+  <option value="parse.php">字串比對</option>
+  </select>
+</form>
+<br>
+<div id="txtHint"><b>...</b></div>
+
+</body>
+</html>
