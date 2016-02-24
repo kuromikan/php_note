@@ -3,8 +3,8 @@
 
 |檔名                                        |說明                              |
 |--------------------------------------------|----------------------------------|
-|[fileread.php](function/fileread.php)       |檔案開啟(function/file.md)        |
-|[filewrite.php](function/filewrite.php)     |檔案寫入(function/file.md)        |
+|[fileread.php](function/fileread.php)       |[檔案開啟](function/file.md)      |
+|[filewrite.php](function/filewrite.php)     |[檔案寫入](function/file.md)      |
 
 
 
