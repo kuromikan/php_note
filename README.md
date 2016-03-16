@@ -17,4 +17,4 @@
 |[index.html](index.html)           |[file.html](function/file.html)             |[fileread.php](function/fileread.php)       |
 |                                   |                                            |[filewrite.html](function/filewrite.php)    |
 |                                   |[split.php](function/split.php)             |                                            |
-|                                   |[split.php](function/parse.php)             |                                            |
+|                                   |[parse.php](function/parse.php)             |                                            |
